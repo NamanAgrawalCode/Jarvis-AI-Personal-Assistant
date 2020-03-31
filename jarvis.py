@@ -130,6 +130,21 @@ if __name__ == '__main__':
             freecodecamp = ['Sure!', 'Learn Coding Free!', 'The world is in as shocking need of coders! I hope you become one!']
             speak(random.choice(freecodecamp))
             webbrowser.get(chrome_path).open("freecodecamp.org")
+                      
+         elif 'open wikipedia' in query.lower():
+            ww = ['Sure!', 'Ok, Boss.', 'Learn and perish!']
+            speak(random.choice(ww))
+            webbrowser.get(chrome_path).open("wikipedia.org")
+					  
+		 elif 'open wolframalpha' in query or 'open w o l f r a m a l p h a' in query.lower():
+            wolfram = ['Sure, they are one of my Sponsers', 'As you command, My lord.', 'Apka hukum salokho par.']
+            speak(random.choice(wolfram))
+            webbrowser.get(chrome_path).open("wolframalpha.com")
+					  
+		elif 'open your code' in query.lower():
+            codecode = ['Sorry, but thats a gaurded secret']
+            speak(random.choice(codecode))
+            webbrowser.get(chrome_path).open("sorrybutthatsasecretsogetout.com")
 
         elif 'wikipedia search' in query.lower():
             speak("Searching wikipedia...")
@@ -162,7 +177,7 @@ if __name__ == '__main__':
             speak('Bye Sir, have a good day.')
             sys.exit()
            
-        elif 'hello' in query:
+        elif 'hello' in query or 'hi' in query:
             speak('Hello Sir')
 
         elif 'bye' in query:
@@ -191,6 +206,12 @@ if __name__ == '__main__':
         elif 'time' in query.lower():
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(" Sir, the time is " + strTime)
+					  
+				elif 'google search' in query:
+						query = query.replace(" ", "+")
+						speak("Boss, as I can't read it out yet, I am opening it for you.")
+						webbrowser.open('www.google.com/search?q=' + query)
+			
 
         elif 'to whom does the credit of making you goes to' in query.lower():
             speak("The Credit of making me goes to many people. Topmost of them being free CodeCamp (and their forum), My creator's family and friends, Python, Wikipedia, pyttsx3, speech_recognition, Google, WolframAlpha, GitHub, the  creator of the game, CodeWithHarry, My creator, etc.,  ")
@@ -232,6 +253,6 @@ if __name__ == '__main__':
             except:
                 webbrowser.open('www.google.com/search?q=' + query)
         
-        a = ['Next Comand, Sir', 'What more do want to do, Sir', 'Next Command, Boss!', 'I am ready for your next wish, Boss.', "What do'ya wanna do, Boss? ", "Ready for ya'next wish, boss." ]
+        askingfornextcommand = ['Next Comand, Sir', 'What more do want to do, Sir', 'Next Command, Boss!', 'I am ready for your next wish, Boss.', "What do'ya wanna do, Boss? ", "Ready for ya'next wish, boss.", "Boss, I want to do more!", "At your service, My lord", "Your Wish, My Command.", "Whatever you need! I owe you! Boss!" ]
 
-        speak(random.choice(a))
+        speak(random.choice(askingfornextcommand))
