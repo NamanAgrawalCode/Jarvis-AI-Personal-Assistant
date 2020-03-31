@@ -4,20 +4,38 @@ I have combined many Jarvis AI's available on the net. I will keep updating the 
 
 # fetures 
 
-1. We can open wikipedia, google, gmail, youtube, github, etc.
-2. It can send emails. You do need to tell it your email first, though.
-3. It can search the web.
-4. It will wish you.
-5. It can tell you the time.
+He will talk to you.
 
-# Soon to come
+He will listen you.
 
-6. A game.
-7. The ability to chat.
-8. Tell you the date.
-9. Better Wolframalpha search.
-10. Google searches
+We can open wikipedia, google, gmail, youtube, github, instuctables, free code camp, reddit, instagram.
 
-a lot of bugs are to be fixed
+He can send emails. You do need to tell it your email first, though.
 
-Sorry, I wasn't able to do a lot in three day.
+He can search the web.
+
+He will wish you.
+
+He can tell you the time.
+
+Google searches.
+
+He can now search Wikipedia- just say, for eg., Bill Gates Wikipedia Search.
+
+He will keep functioning in a loop.
+
+
+# Soon to come (like, in 3, or 4 days)
+
+
+A mini game.
+
+The ability to chat.
+
+Tell you the date.
+
+Better Wolframalpha search.
+
+Easter Eggs.
+
+bugs will be fixed
