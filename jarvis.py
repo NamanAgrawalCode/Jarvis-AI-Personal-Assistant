@@ -13,8 +13,8 @@ pip install pyaudio
 
 google it
 '''
-import webbrowser
-import smtplib
+import webbrowser #pip install pycopy-webbrowser
+import smtplib #pip install secure-smtplib
 import random
 import speech_recognition as sr   #pip install speechRecognition
 import wikipedia    #pip install wikipedia
