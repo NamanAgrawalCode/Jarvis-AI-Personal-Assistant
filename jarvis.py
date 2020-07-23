@@ -1,5 +1,7 @@
 #This is my trail at buiding a Jarvis Assistant in python
-
+#Copyright imposed. DO NOT COPY
+#Do not steal the code
+#Credit me everywhere you use this.
 
 import pyttsx3   #pip install pyttsx
 '''
@@ -28,6 +30,7 @@ chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
 
 
 #the pyttsx3 module
+#pyttsx3 is a tts python module.
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[len(voices)-1].id)
@@ -51,22 +54,26 @@ def greetMe():
 
 greetMe()
 
+#The assistant will say this everytime it is loaded.
 speak('Hello Sir, I am your digital assistant JARVIS')
 speak('How may I help you?')
 
 
+#To make microphone input possible.
+
 def takeCommand():
    
     r = sr.Recognizer()                                                                                   
-    with sr.Microphone() as source:                                                                       
+    with sr.Microphone() as source:   #microphone                                                                   
         print("Listening...")
         
         audio = r.listen(source)
     try:
         print("recognizing....")
-        query = r.recognize_google(audio, language='en-in')
+        query = r.recognize_google(audio, language='en-in')  #it will use google recognize
         print('Boss: ' + query + '\n')
         
+#If the J.A.R.V.I.S cannot recognize what the user said, the user can type the command.
     except sr.UnknownValueError:
         speak('Sorry sir! I didn\'t get that! Try typing the command!')
         query = str(input('Command: '))
@@ -81,7 +88,7 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login("Your_Gmail_Account_ID", "Your_Account_Password") '''Do not worry, your password is safe!'''
+    server.login("Your_Gmail_Account_Email", "Your_Account_Password") #'''Do not worry, your password is safe!'''
     server.sendmail("namanryp@gmail.com", to, content)
     server.close
         
@@ -94,6 +101,8 @@ if __name__ == '__main__':
         query = query.lower()
         
         
+# If what the user says contains "open YouTube", it will open YouTube in chrome
+	
         if 'open youtube' in query:
             speak('okay')
             webbrowser.get(chrome_path).open("youtube.com")
@@ -108,16 +117,16 @@ if __name__ == '__main__':
 
         elif 'open reddit' in query.lower():
             red = ['Sure, Boss.', 'Sure Thing, Sir.', 'There you go, Master.']
-            speak(random.choice(red))
+            speak(random.choice(red)) #To keep things interesting, J.A.R.V.I.S, will say either of these things, randomly.
             webbrowser.get(chrome_path).open("reddit.com")
 
         elif 'open instagram' in query.lower():
-            insta = ['Ok, Enjoy.', 'There you go! Sir!' 'Sure. Do not forget to follow!']
+            insta = ['Ok, Enjoy.', 'There you go! Sir!', 'Sure. Do not forget to follow! @namanagrawalmememaster', 'as you order, Boss!']
             speak(random.choice(insta))
             webbrowser.get(chrome_path).open("instagram.com")
             
         elif 'open github' in query.lower():
-            github = ['Remember, it's NamanAgrawalCode', 'become a great coder and create my brothers and sister!' ]
+            github = ['Remember, its NamanAgrawalCode', 'become a great coder and create my brothers and sister!' ]
             speak(random.choice(github))
             webbrowser.get(chrome_path).open("github.com")
             
@@ -137,16 +146,17 @@ if __name__ == '__main__':
             webbrowser.get(chrome_path).open("wikipedia.org")
 					  
 		 elif 'open wolframalpha' in query or 'open w o l f r a m a l p h a' in query.lower():
-            wolfram = ['Sure, they are one of my Sponsers', 'As you command, My lord.', 'Apka hukum salokho par.']
+            wolfram = ['Sure.', 'As you command, My lord.', 'Apka hukum salokho par.']
             speak(random.choice(wolfram))
             webbrowser.get(chrome_path).open("wolframalpha.com")
 					  
 		elif 'open your code' in query.lower():
-            codecode = ['Sorry, but thats a gaurded secret']
+            codecode = ['Sorry, but thats a gaurded secret', 'Sorry, but i WONT']
             speak(random.choice(codecode))
             webbrowser.get(chrome_path).open("sorrybutthatsasecretsogetout.com")
 
-        elif 'wikipedia search' in query.lower():
+	#search wikipedia!
+        elif 'search wikipedia' in query.lower():
             speak("Searching wikipedia...")
             query = query.replace("wikipedia search", "")
             speak("How many sentences do you want to know?")
@@ -156,10 +166,11 @@ if __name__ == '__main__':
             print(results)
 
 
-        elif "what\'s up" in query or 'how are you' in query:
-            whatsup = ['Just doing my thing!', 'I am fine!', 'Nice!', 'I am nice and full of energy', "Perfect and ready for use, Boss."]
+        elif "what's up" in query or 'how are you' in query:
+            whatsup = ['Just doing my thing!', 'I am fine!', 'Nice!', 'I am nice and full of energy', "Perfect and ready for use, Boss.", 'Ready to help you!']
             speak(random.choice(whatsup))
 
+		#sending emails!
         elif 'email' in query.lower() :
             try:
                 speak("What should I send?")
@@ -190,6 +201,7 @@ if __name__ == '__main__':
             print(songs)
             os.startfile(os.path.join(songs_dir, songs[0]))
 
+		#game! (give the directory)
         elif 'game' in query.lower():
             game = "A_Game_Directory"
             
